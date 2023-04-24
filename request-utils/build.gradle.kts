@@ -23,10 +23,10 @@ object Ktor {
     const val jvm = "$base:ktor-client-cio:$version"
 }
 publishing {
-    val repoName = "AstroPlayer"
-    val groupName = "com.deathsdoor.astroplayer"
-    val currentVersion = "0.0.6"
-    val repoURL = "https://github.com/Deaths-Door/AstroPlayer"
+    val repoName = "Reqeust-Utilities"
+    val groupName = "com.deathsdoor.request-utilities"
+    val currentVersion = "1.0.0"
+    val repoURL = "https://github.com/Deaths-Door/Reqeust-Utilities"
     repositories {
         maven {
             url = uri(repoURL)
@@ -37,13 +37,12 @@ publishing {
     }
     publications {
         register("maven", MavenPublication::class) {
-            //  from(components["common"])
             groupId = groupName
-            artifactId = "astroplayer-core"
+            artifactId = "request-utilities"
             version = currentVersion
             pom {
                 name.set(repoName)
-                description.set("AstroPlayer is an open-source media player designed for the Kotlin Multiplatform Mobile (KMM) framework. It provides a simple API for audio playback and supports multiple media formats.")
+                description.set("Request-Utilities is a Kotlin Multiplatform library that provides a simple and efficient way to make HTTP requests in Kotlin Multiplatform projects. Request-Utilities is designed to be easy to use, customizable, and extendable.")
                 url.set(repoURL)
                 licenses {
                     license {

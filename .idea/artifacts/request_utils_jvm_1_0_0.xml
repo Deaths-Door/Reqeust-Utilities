@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="request-utils-jvm-1.0.0">
+    <output-path>$PROJECT_DIR$/request-utils/build/libs</output-path>
+    <root id="archive" name="request-utils-jvm-1.0.0.jar">
+      <element id="module-output" name="RequestUtilities.request-utils.jvmMain" />
+    </root>
+  </artifact>
+</component>
