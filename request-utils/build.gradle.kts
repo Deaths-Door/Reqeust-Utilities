@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.deathsdoor.request-utilities"
+    namespace = "com.deathsdoor.request_utilities"
     compileSdk = 33
     defaultConfig {
         minSdk = 21
