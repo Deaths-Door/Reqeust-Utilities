@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="request-utils-js">
+    <output-path>$PROJECT_DIR$/request-utils/build/libs</output-path>
+    <root id="archive" name="request-utils-js.jar">
+      <element id="module-output" name="RequestUtilities.request-utils.jsMain" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="11">
+      <module name="RequestUtilities.ktor-request-utils.commonMain" target="1.8" />
+      <module name="RequestUtilities.ktor-request-utils.commonTest" target="1.8" />
+      <module name="RequestUtilities.ktor-request-utils.jvmMain" target="1.8" />
+      <module name="RequestUtilities.ktor-request-utils.jvmTest" target="1.8" />
+      <module name="RequestUtilities.request-utils.commonMain" target="1.8" />
+      <module name="RequestUtilities.request-utils.commonTest" target="1.8" />
+      <module name="RequestUtilities.request-utils.jvmMain" target="1.8" />
+      <module name="RequestUtilities.request-utils.jvmTest" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
