@@ -40,7 +40,7 @@ kotlin {
     
     cocoapods {
         summary = "Request-Utilities is a Kotlin Multiplatform library that provides a simple and efficient way to make HTTP requests in Kotlin Multiplatform projects. Request-Utilities is designed to be easy to use, customizable, and extendable."
-        version = "0.1.1"
+        version = "1.0.1"
         ios.deploymentTarget = "14.1"
         framework {
             baseName = "request-utils"
