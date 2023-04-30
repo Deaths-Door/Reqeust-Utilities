@@ -25,7 +25,10 @@ object Ktor {
 }
 
 kotlin {
-    android()
+    android {
+        publishLibraryVariants("release")
+    }
+    
     jvm()
     js(IR){
         browser()
