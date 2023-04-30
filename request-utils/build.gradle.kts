@@ -3,10 +3,11 @@ plugins {
     id("com.android.library")
     kotlin("plugin.serialization") version "1.8.10"
     id("maven-publish")
+    kotlin("native.cocoapods")
 }
 
 android {
-    namespace = "com.deathsdoor.request_utilities"
+    namespace = "com.deathsdoor.request_utils"
     compileSdk = 33
     defaultConfig {
         minSdk = 21
@@ -22,38 +23,7 @@ object Ktor {
     const val js = "$base:ktor-client-js:$version"
     const val jvm = "$base:ktor-client-cio:$version"
 }
-publishing {
-    val repoName = "Reqeust-Utilities"
-    val groupName = "com.deathsdoor.request-utilities"
-    val currentVersion = "1.0.0"
-    val repoURL = "https://github.com/Deaths-Door/Reqeust-Utilities"
-    repositories {
-        maven {
-            url = uri(repoURL)
-            name = repoName
-            group = groupName
-            version = currentVersion
-        }
-    }
-    publications {
-        register("maven", MavenPublication::class) {
-            groupId = groupName
-            artifactId = "request-utilities"
-            version = currentVersion
-            pom {
-                name.set(repoName)
-                description.set("Request-Utilities is a Kotlin Multiplatform library that provides a simple and efficient way to make HTTP requests in Kotlin Multiplatform projects. Request-Utilities is designed to be easy to use, customizable, and extendable.")
-                url.set(repoURL)
-                licenses {
-                    license {
-                        name.set("The Apache License, Version 2.0")
-                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
-                    }
-                }
-            }
-        }
-    }
-}
+
 kotlin {
     android()
     jvm()
@@ -64,43 +34,45 @@ kotlin {
     }
 
     ios()
-    iosX64()
-    iosArm64()
+    
+    cocoapods {
+        summary = "Request-Utilities is a Kotlin Multiplatform library that provides a simple and efficient way to make HTTP requests in Kotlin Multiplatform projects. Request-Utilities is designed to be easy to use, customizable, and extendable."
+        version = "0.1.1"
+        ios.deploymentTarget = "14.1"
+        framework {
+            baseName = "request-utils"
+        }
+    }
+    
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(kotlin("stdlib"))
-                //TODO change to implementation
-                api("io.ktor:ktor-client-core:2.2.4")
                 api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+                implementation("io.ktor:ktor-client-core:2.2.4")
             }
         }
 
         val androidMain by getting {
             dependencies{
                 implementation(Ktor.android)
-                //implementation("io.ktor:ktor-client-okhttp:2.2.4")
             }
         }
 
         val jvmMain by getting {
             dependencies{
                 implementation(Ktor.jvm)
-             //   implementation("io.ktor:ktor-client-cio:2.0.0")
             }
         }
 
         val iosMain by getting {
             dependencies{
                 implementation(Ktor.ios)
-                //implementation("io.ktor:ktor-client-ios:2.0.0")
             }
         }
 
         val jsMain by getting {
             dependencies{
                 implementation(Ktor.js)
-               // implementation("io.ktor:ktor-client-js:2.2.4")
             }
         }
     }
