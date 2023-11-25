@@ -1,4 +1,4 @@
-package com.deathsdoor.ktor_request_utils
+package com.deathsdoor.request_utils
 
 import io.ktor.client.*
 import io.ktor.client.engine.*
